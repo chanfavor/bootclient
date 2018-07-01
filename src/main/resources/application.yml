@@ -1,0 +1,15 @@
+server:
+  port: 9091
+spring:
+  application:
+    name: boot-client
+  cloud.config:
+    #  启动服务发现的功能，开启了才能调用其它服务
+    discovery.enabled: true
+    #  发现的服务的名字--对应注测中心的服务名字
+    discovery.serviceId: boot-server
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl.defaultZone: http://localhost:9090/eureka/
